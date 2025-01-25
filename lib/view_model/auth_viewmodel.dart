@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:to_do_app/view/forgot_password_view.dart';
+import 'package:to_do_app/view/home_page_view.dart';
 import 'package:to_do_app/view/login_view.dart';
 import 'package:to_do_app/view/register_view.dart';
 
@@ -37,5 +38,10 @@ class AuthViewmodel extends ChangeNotifier {
     emailController.clear();
     passController.clear();
     confirmPassController.clear();
+  }
+
+  void navigateHome(BuildContext context) {
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => const HomePageView()));
   }
 }

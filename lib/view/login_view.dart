@@ -53,7 +53,9 @@ class LoginView extends StatelessWidget {
                 ),
                 15.kH,
                 ButtonWidget(
-                  onPressed: () {},
+                  onPressed: () {
+                    authController.navigateHome(context);
+                  },
                 ),
                 20.kH,
                 RichText(
