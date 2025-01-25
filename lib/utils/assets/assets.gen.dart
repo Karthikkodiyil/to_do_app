@@ -20,10 +20,24 @@ class $AssetsIconGen {
   List<AssetGenImage> get values => [mimoLightIcon];
 }
 
+class $AssetsImageGen {
+  const $AssetsImageGen();
+
+  /// File path: assets/image/person_1.jpg
+  AssetGenImage get person1 => const AssetGenImage('assets/image/person_1.jpg');
+
+  /// File path: assets/image/person_2.jpg
+  AssetGenImage get person2 => const AssetGenImage('assets/image/person_2.jpg');
+
+  /// List of all assets
+  List<AssetGenImage> get values => [person1, person2];
+}
+
 class Assets {
   Assets._();
 
   static const $AssetsIconGen icon = $AssetsIconGen();
+  static const $AssetsImageGen image = $AssetsImageGen();
 }
 
 class AssetGenImage {

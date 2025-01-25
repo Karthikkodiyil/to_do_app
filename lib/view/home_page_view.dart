@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:to_do_app/utils/app_color.dart';
 import 'package:to_do_app/utils/app_style.dart';
+import 'package:to_do_app/utils/assets/assets.gen.dart';
 import 'package:to_do_app/utils/components/dialog_box_widget.dart';
 import 'package:to_do_app/utils/components/size_config.dart';
 import 'package:to_do_app/view_model/home_page_viewmodel.dart';
@@ -32,7 +33,10 @@ class HomePageView extends StatelessWidget {
                         onTap: () {
                           homePageController.navigateSetting(context);
                         },
-                        child: CircleAvatar()),
+                        child: CircleAvatar(
+                          backgroundImage:
+                              AssetImage(Assets.image.person2.path),
+                        )),
                     Text(
                       "Categories",
                       style: styles.blackBold16,
@@ -56,7 +60,9 @@ class HomePageView extends StatelessWidget {
                             offset: Offset(0, 2))
                       ]),
                   child: ListTile(
-                    leading: CircleAvatar(),
+                    leading: CircleAvatar(
+                      backgroundImage: AssetImage(Assets.image.person1.path),
+                    ),
                     title: Text(
                       '"The memories is a shield and life helper."',
                       style: styles.blackRegular11,
@@ -95,7 +101,8 @@ class HomePageView extends StatelessWidget {
                               return InkWell(
                                 onTap: () {
                                   index == 0
-                                      ? homePageController.addButtonFunction(context)
+                                      ? homePageController
+                                          .addButtonFunction(context)
                                       : homePageController.navigateDisc(context,
                                           todos[0]["todos"][index - 1]);
                                 },

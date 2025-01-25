@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:to_do_app/utils/app_color.dart';
 import 'package:to_do_app/utils/app_style.dart';
+import 'package:to_do_app/utils/assets/assets.gen.dart';
 import 'package:to_do_app/utils/components/size_config.dart';
 import 'package:to_do_app/view_model/home_page_viewmodel.dart';
 
@@ -41,7 +42,10 @@ class SettingsView extends StatelessWidget {
                     children: [
                       Row(
                         children: [
-                          CircleAvatar(),
+                          CircleAvatar(
+                            backgroundImage:
+                                AssetImage(Assets.image.person2.path),
+                          ),
                           15.kW,
                           Column(
                             children: [
